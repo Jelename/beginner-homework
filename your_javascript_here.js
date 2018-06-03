@@ -64,7 +64,7 @@ let bedPic = document.getElementById('bed');
 bedPic.onclick = function() {rest(hero); updateStats()};
 
 let weaponPic = document.getElementById('weapon');
-weaponPic.onclick = function() {pickUpItem(hero, {type: 'Water gun', damage: 4}); updateStats()};
+weaponPic.onclick = function() {pickUpItem(hero, {type: 'Water gun', damage: 4}); updateStats(); removeWeapon()};
 
 let enemyPic = document.getElementById('enemy');
 enemyPic.onclick = function() {doBattle(hero, {health: 8, weapon: {damage: 2}})};
@@ -110,6 +110,12 @@ function displayInventory() {
                         //'type: ' + listItemType + ", Damage" + listItemDamage;
     inventoryList.appendChild(listItem);
   }
+}
+
+function removeWeapon() {
+  let heroWeaponRemove = document.getElementById('weapon');
+  console.log(heroWeaponRemove);
+  heroWeaponRemove.remove();
 }
 
 //update function
