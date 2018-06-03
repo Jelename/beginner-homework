@@ -51,7 +51,7 @@ function doBattle(heroicCreature, creature) {
         window.alert('You superhero is dead! Be stronger next time!');
       }
     } else {
-      console.log('Enemy is dead! You are the best!');
+      window.alert('Enemy is dead! You are the best!');
       return heroicCreature;
     }
   }
@@ -93,8 +93,6 @@ function displayStats() {
 
 //Section 4
 function displayInventory() {
-
-
   if (document.contains(document.getElementById("inventoryList"))) {
             document.getElementById("inventoryList").remove();
   }
@@ -114,14 +112,11 @@ function displayInventory() {
   }
 }
 
-
 //update function
 function updateStats() {
   displayStats();
   displayInventory();
 }
-
-
 
 //changing hero's name
 function nameChanging() {
