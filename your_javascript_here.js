@@ -61,10 +61,10 @@ function doBattle(heroicCreature, creature) {
 
 // UI
 let bedPic = document.getElementById('bed');
-bedPic.onclick = function() {rest(hero)};
+bedPic.onclick = function() {rest(hero); updateStats()};
 
 let weaponPic = document.getElementById('weapon');
-weaponPic.onclick = function() {pickUpItem(hero, {type: 'Water gun', damage: 4})};
+weaponPic.onclick = function() {pickUpItem(hero, {type: 'Water gun', damage: 4}); updateStats()};
 
 let enemyPic = document.getElementById('enemy');
 enemyPic.onclick = function() {doBattle(hero, {health: 8, weapon: {damage: 2}})};
@@ -105,19 +105,12 @@ function displayInventory() {
 }
 
 
-//update stats
-let updateStats = document.getElementsByTagName('img');
-updateStats.onclick = function() {
+//update function
+function updateStats() {
   displayStats();
   displayInventory();
 }
 
-
-
-// document.querySelectorAll("img").addEventListener("click", function() {
-//  displayStats();
-//     displayInventory();
-// });
 
 
 //changing hero's name
@@ -135,4 +128,4 @@ function nameShowing() {
 
 
 displayStats();
-displayInventory();
+//displayInventory();
