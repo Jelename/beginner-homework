@@ -93,14 +93,24 @@ function displayStats() {
 
 //Section 4
 function displayInventory() {
-  let inventoryListElement = document.getElementById('inventoryList');
+
+
+  if (document.contains(document.getElementById("inventoryList"))) {
+            document.getElementById("inventoryList").remove();
+  }
+
+  let inventoryListHolder = document.getElementById('inventoryListHolder');
+  let inventoryList = document.createElement('ul');
+  inventoryList.setAttribute('id', 'inventoryList');
+  inventoryListHolder.appendChild(inventoryList);
+
   for(let i = 0; i < hero.inventory.length; i++) {
     let listItem = document.createElement('li');
     let listItemType = hero.inventory[i].type;
     let listItemDamage = hero.inventory[i].damage;
     listItem.innerText = `Type: ${listItemType}, Damage: ${listItemDamage}`;
                         //'type: ' + listItemType + ", Damage" + listItemDamage;
-    inventoryListElement.appendChild(listItem);
+    inventoryList.appendChild(listItem);
   }
 }
 
