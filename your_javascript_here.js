@@ -129,6 +129,7 @@ function nameChanging() {
   document.getElementById('newName').value = null;
   hero.name = newName;
   nameShowing();
+  updateStats();
 }
 
 function nameShowing() {
