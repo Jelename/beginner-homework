@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BB homework</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <h1>Superhero battle</h1>
+          <img src="images/bed.jpg" id="bed" onclick="rest(hero)">
+          <img src="images/weapon.jpeg" id='weapon' onclick="pickUpItem(hero, {type: 'Water gun', damage: 4})"><br>
+          <img src="images/clown.jpg" id="enemy" onclick="doBattle(hero, {health: 8, weapon: {damage: 2}})">
+          <img src="images/backpack.jpg" id="takeWeapon" onclick="equipWeapon(hero, window.prompt())">
+        <ul id="stats">
+        </ul>
+        <ul id="inventoryList"></ul>
+
+
+        <script src="your_javascript_here.js"></script>
+        <script src="tests.js"></script>
+    </body>
+</html>
