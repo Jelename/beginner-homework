@@ -9,14 +9,35 @@
     </head>
     <body>
         <h1>Superhero battle</h1>
-          <img src="images/bed.jpg" id="bed" onclick="rest(hero)">
-          <img src="images/weapon.jpeg" id='weapon' onclick="pickUpItem(hero, {type: 'Water gun', damage: 4})"><br>
-          <img src="images/clown.jpg" id="enemy" onclick="doBattle(hero, {health: 8, weapon: {damage: 2}})">
-          <img src="images/backpack.jpg" id="takeWeapon" onclick="equipWeapon(hero, window.prompt())">
-        <ul id="stats">
-        </ul>
-        <ul id="inventoryList"></ul>
 
+        <div class="container">
+          <div class="flex-container">
+            <div>
+              <img src="images/bed.jpg" id="bed">
+            </div>
+            <div>
+                <img src="images/weapon.jpeg" id='weapon'>
+            </div>
+            <div class="column">
+                <img src="images/clown.jpg" id="enemy">
+            </div>
+            <div>
+                <img src="images/backpack.jpg" id="takeWeapon">
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div id="stats">
+            <p id="heroName"></p>
+            <p id="heroHealt"></p>
+            <p id="heroWeapon"></p>
+          </div>
+        </div>
+
+        <div class="container">
+          <ul id="inventoryList"></ul>
+        </div>
 
         <script src="your_javascript_here.js"></script>
         <script src="tests.js"></script>
