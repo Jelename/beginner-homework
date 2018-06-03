@@ -2,7 +2,7 @@
 let hero = {
   name: 'Batman',
   heroic: true,
-  inventory: [{type: 'Batarang', damage: 2}, {type: 'Grappling Gun', damage: 3}, {type :'Utility Belt Taser', damage: 2}],
+  inventory: [{type: 'Batarang', damage: 2}, {type: 'Grappling Gun', damage: 3}, {type :'Utility Belt Taser', damage: 2}, {type: 'Knife', damage: 2}],
   health: 5,
   weapon: {type: 'Batarang',
           damage: 2
@@ -57,6 +57,8 @@ function doBattle(heroicCreature, creature) {
   }
 }
 
+
+
 // UI
 let bedPic = document.getElementById('bed');
 bedPic.onclick = function() {rest(hero)};
@@ -70,24 +72,21 @@ enemyPic.onclick = function() {doBattle(hero, {health: 8, weapon: {damage: 2}})}
 let takeWeaponPic = document.getElementById('takeWeapon');
 takeWeaponPic.onclick = function() {equipWeapon(hero, window.prompt())};
 
-// function displayStats() {
-//   let heroStats = document.createTextNode(`Your superhero name is: ${hero.name}, Your superhero health is: ${hero.health}, Your superhero weapon type is: ${hero.weapon.type} with the damage value of: ${hero.weapon.damage}`);
-//   let statsHolder = document.getElementById('stats');
-//   statsHolder.appendChild(heroStats);
-// }
 
+
+//display stats function
 function displayStats() {
   //name
   let heroName = document.getElementById('heroName');
-  heroName.innerText = `Your superhero name is: ${hero.name}`
+  heroName.innerText = `Superhero name is: ${hero.name}`
 
   //health
   let heroHealthItem = document.getElementById('heroHealt');
-  heroHealthItem.innerText = `Your superhero health level is: ${hero.health}`;
+  heroHealthItem.innerText = `Superhero health level is: ${hero.health}`;
 
   //weapon
   let heroWeaponItem = document.getElementById('heroWeapon');
-  heroWeaponItem.innerText = `Your superhero weapon is: ${hero.weapon.type}, with a level damage of: ${hero.weapon.damage}`
+  heroWeaponItem.innerText = `Superhero weapon is: ${hero.weapon.type}, with a level damage of: ${hero.weapon.damage}`
 
 }
 
@@ -106,8 +105,33 @@ function displayInventory() {
 }
 
 
+//update stats
+let updateStats = document.getElementsByTagName('img');
+updateStats.onclick = function() {
+  displayStats();
+  displayInventory();
+}
 
 
+
+// document.querySelectorAll("img").addEventListener("click", function() {
+//  displayStats();
+//     displayInventory();
+// });
+
+
+//changing hero's name
+function nameChanging() {
+  let newName = document.getElementById('newName').value;
+  document.getElementById('newName').value = null;
+  hero.name = newName;
+  nameShowing();
+}
+
+function nameShowing() {
+  let newSuperheroName = document.getElementById('newSuperheroName');
+  newSuperheroName.innerText = `Your new superhero is: ${hero.name}`;
+}
 
 
 displayStats();

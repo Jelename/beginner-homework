@@ -6,6 +6,7 @@
 
 body {
   text-align: center;
+  font-family: helvetica, sans-serif;
 }
 
 .container {
@@ -24,7 +25,7 @@ h1 {
   display: flex;
 }
 
-.flex-container img {
+img {
   padding: 10px;
   width: 100%;
 }
@@ -50,4 +51,13 @@ ul li {
   font-family: helvetica, sans-serif;
   font-size: 30px;
   margin-top: 5px;
+}
+
+.newHero {
+  font-size: 40px;
+  margin-top: 40px;
+}
+
+.newHero input {
+  width: 200px;
 }
