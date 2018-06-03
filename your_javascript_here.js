@@ -67,7 +67,7 @@ let weaponPic = document.getElementById('weapon');
 weaponPic.onclick = function() {pickUpItem(hero, {type: 'Water gun', damage: 4}); updateStats(); removeWeapon()};
 
 let enemyPic = document.getElementById('enemy');
-enemyPic.onclick = function() {doBattle(hero, {health: 8, weapon: {damage: 2}})};
+enemyPic.onclick = function() {doBattle(hero, {health: 8, weapon: {damage: 2}}), removeEnemy()};
 
 let takeWeaponPic = document.getElementById('takeWeapon');
 takeWeaponPic.onclick = function() {equipWeapon(hero, window.prompt())};
@@ -113,9 +113,14 @@ function displayInventory() {
 }
 
 function removeWeapon() {
-  let heroWeaponRemove = document.getElementById('weapon');
-  console.log(heroWeaponRemove);
-  heroWeaponRemove.remove();
+  let weaponRemove = document.getElementById('weapon');
+  console.log(weaponRemove);
+  weaponRemove.remove();
+}
+
+function removeEnemy() {
+  let enemyRemove = document.getElementById('enemy');
+  enemyRemove.remove();
 }
 
 //update function
